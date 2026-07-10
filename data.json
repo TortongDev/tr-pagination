@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Forward (Striker)",
+    "name": "Erling Haaland",
+    "age": 25
+  },
+  {
+    "id": 2,
+    "title": "Forward (Winger)",
+    "name": "Kylian Mbappé",
+    "age": 27
+  },
+  {
+    "id": 3,
+    "title": "Central Midfielder",
+    "name": "Kevin De Bruyne",
+    "age": 34
+  },
+  {
+    "id": 4,
+    "title": "Defensive Midfielder",
+    "name": "Jude Bellingham",
+    "age": 22
+  },
+  {
+    "id": 5,
+    "title": "Center Back",
+    "name": "Virgil van Dijk",
+    "age": 34
+  },
+  {
+    "id": 6,
+    "title": "Full Back",
+    "name": "Achraf Hakimi",
+    "age": 27
+  },
+  {
+    "id": 7,
+    "title": "Goalkeeper",
+    "name": "Alisson Becker",
+    "age": 33
+  }
+]
