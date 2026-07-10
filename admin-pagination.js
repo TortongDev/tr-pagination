@@ -3,6 +3,7 @@ function createSearchPagination(options){
 	let activePage = 1;
 
 	const config = {
+		ajaxFunctionUrl: options.ajaxFunctionUrl,
 		searchInput: options.searchInput,
 		resultBody: options.resultBody,
 		pagination: options.pagination,
@@ -25,6 +26,7 @@ function createSearchPagination(options){
 	const paginationElement = document.querySelector(config.pagination);
 	const totalElement = document.querySelector(config.totalElement);
 	const footerPagination = document.querySelector(config.footerPagination);
+	const ajaxFunctionUrl = config.ajaxFunctionUrl || "";
 
 	if(!searchInput || !resultBody || !paginationElement || !totalElement || !footerPagination){
 		throw new Error("createSearchPagination: selector not found. Please check searchInput, resultBody, pagination, totalElement, and footerPagination.");
@@ -163,6 +165,8 @@ function createSearchPagination(options){
 		searchInput.value = "";
 		search();
 	}
+
+	ajax_function_url(ajaxFunctionUrl);
 	function ajax_function_url(url){
 		fetch(url)
 		.then(response => response.json())
@@ -252,7 +256,6 @@ function createSearchPagination(options){
 		search,
 		setData,
 		clearSearch,
-		ajax_function_url,
 		refresh_list,
 		create_style
 	};

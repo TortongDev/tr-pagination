@@ -38,6 +38,13 @@
         .card-footer-pagination.d-none {
             display: none;
         }
+
+        :root {
+            --theme-pagination-bg: orange;
+            --theme-pagination-font: orange;
+            --theme-pagination-font-active: #FFFFFF;
+        }
+        
     </style>
 </head>
 <body>
@@ -65,6 +72,7 @@
     <script>
         
         let settingFetchPaginationSearch = createSearchPagination({
+            ajaxFunctionUrl: "./players.json",
             data: [],
             searchInput: "#search_tcl_config",
             resultBody: "#result",
@@ -91,7 +99,6 @@
             `,
             renderRow: tr_td,
         });
-        settingFetchPaginationSearch.ajax_function_url("./data/players.json");
         function tr_td(row, rowNumber){
             return `
                 <tr>
