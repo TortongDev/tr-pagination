@@ -5,9 +5,9 @@ function createSearchPagination(options){
 	const config = {
 		ajaxFunctionUrl: options.ajaxFunctionUrl,
 		searchInput: options.searchInput,
-		resultBody: options.resultBody,
+		resultTBody: options.resultTBody,
 		pagination: options.pagination,
-		totalElement: options.totalElement,
+		showTotal: options.showTotal,
 		footerPagination: options.footerPagination,
 		perPage: options.perPage || 25,
 		searchFields: options.searchFields || [],
@@ -22,14 +22,14 @@ function createSearchPagination(options){
 		}
 	};
 	const searchInput = document.querySelector(config.searchInput);
-	const resultBody = document.querySelector(config.resultBody);
+	const resultTBody = document.querySelector(config.resultTBody);
 	const paginationElement = document.querySelector(config.pagination);
-	const totalElement = document.querySelector(config.totalElement);
+	const showTotal = document.querySelector(config.showTotal);
 	const footerPagination = document.querySelector(config.footerPagination);
 	const ajaxFunctionUrl = config.ajaxFunctionUrl || "";
 
-	if(!searchInput || !resultBody || !paginationElement || !totalElement || !footerPagination){
-		throw new Error("createSearchPagination: selector not found. Please check searchInput, resultBody, pagination, totalElement, and footerPagination.");
+	if(!searchInput || !resultTBody || !paginationElement || !showTotal || !footerPagination){
+		throw new Error("createSearchPagination: selector not found. Please check searchInput, resultTBody, pagination, showTotal, and footerPagination.");
 	}
 
 	function getFilteredData(){
@@ -49,13 +49,13 @@ function createSearchPagination(options){
 		const total = filtered.length;
 		const totalPages = Math.ceil(total / config.perPage);
 
-		totalElement.innerHTML = total;
+		showTotal.innerHTML = total;
 		paginationElement.innerHTML = "";
 
 
 		if(total === 0){
 			footerPagination.classList.add("d-none");
-			resultBody.innerHTML = config.emptyHtml;
+			resultTBody.innerHTML = config.emptyHtml;
 			return;
 		}
 
@@ -74,7 +74,7 @@ function createSearchPagination(options){
 			html += config.renderRow(row, rowNumber);
 		});
 		
-		resultBody.innerHTML = html;
+		resultTBody.innerHTML = html;
 
 		if(totalPages > 1){
 			renderPagination(totalPages);

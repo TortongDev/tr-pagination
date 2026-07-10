@@ -75,16 +75,14 @@
             ajaxFunctionUrl: "./players.json",
             data: [],
             searchInput: "#search_tcl_config",
-            resultBody: "#result",
-            totalElement: ".data-total",
+            resultTbody: "#result",
+            showTotal: ".data-total",
             footerPagination: ".card-footer-pagination",
                 pagination: "#pagination",
             perPage: 3,
             searchFields: [
                 "title",
-                "name",
-                "nationality",
-                "jersey_number",
+                "name"
             ],
             labels: {
                 first: "First",
