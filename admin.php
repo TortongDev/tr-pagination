@@ -39,29 +39,13 @@
             display: none;
         }
 
-        #pagination {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        #pagination button {
-            cursor: pointer;
-            padding: 7px 10px;
-        }
-
-        #pagination button.active {
-            background: #0d6efd;
-            border-color: #0d6efd;
-            color: #fff;
-        }
-
         .data-empty-row {
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 16px;
             text-align: center;
         }
+        
     </style>
 </head>
 <body>
