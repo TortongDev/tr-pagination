@@ -38,14 +38,6 @@
         .card-footer-pagination.d-none {
             display: none;
         }
-
-        .data-empty-row {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 16px;
-            text-align: center;
-        }
-        
     </style>
 </head>
 <body>
@@ -100,9 +92,6 @@
             renderRow: tr_td,
         });
         settingFetchPaginationSearch.ajax_function_url("./data/players.json");
-        setTimeout(() => {
-            settingFetchPaginationSearch.refresh_list("./data/players.json");
-        }, 3000);
         function tr_td(row, rowNumber){
             return `
                 <tr>

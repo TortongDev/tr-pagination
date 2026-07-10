@@ -196,6 +196,52 @@ function createSearchPagination(options){
 			setData([]);
 		});
 	}
+	create_style()
+	function create_style(){
+		const create_styles = document.createElement('style');
+		create_styles.textContent = 
+			`
+			
+			#pagination {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 3px;
+				color: var(--theme-pagination-font);
+			}
+
+			#pagination button {
+				cursor: pointer;
+				padding: 4px 8px;
+				border-color: var(--theme-pagination-font);
+				color: var(--theme-pagination-font);
+				border-radius: 0px !important;
+			}
+			#pagination span button {
+				margin: 0 2px;
+			}
+			#pagination button.active {
+				background: var(--theme-pagination-bg);
+				border-color: var(--theme-pagination-font);
+				color: var(--theme-pagination-font-active);
+			}
+			#pagination button:hover {
+				background: var(--theme-pagination-bg);
+				border-color: var(--theme-pagination-font);
+				color: var(--theme-pagination-font-active);
+			}
+
+			.data-empty-row {
+				border: 1px solid #ddd;
+				border-radius: 2px;
+				padding: 16px;
+				text-align: center;
+		}`;
+
+		if(typeof create_styles != 'string'){
+			document.head.appendChild(create_styles)
+		}
+		
+	}
 
 	searchInput.addEventListener("input", function(){
 		search();
@@ -207,6 +253,7 @@ function createSearchPagination(options){
 		setData,
 		clearSearch,
 		ajax_function_url,
-		refresh_list
+		refresh_list,
+		create_style
 	};
 }
