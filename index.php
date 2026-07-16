@@ -97,18 +97,7 @@
             `,
             renderRow: tr_td,
         });
-        function tr_td(row, rowNumber){
-            return `
-                <tr>
-                    <td>${rowNumber}</td>
-                    <td>${row.title}</td>
-                    <td>${row.name}</td>
-                    <td>${row.age}</td>
-                    <td>${row.club}</td>
-                    <td>${row.nationality}</td>
-                </tr>
-            `;
-        }
+   
 
     </script>
 </body>
