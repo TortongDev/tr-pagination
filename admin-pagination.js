@@ -251,12 +251,5 @@ function createSearchPagination(options){
 		search();
 	});
 
-	return {
-		render,
-		search,
-		setData,
-		clearSearch,
-		refresh_list,
-		create_style
-	};
+	
 }
