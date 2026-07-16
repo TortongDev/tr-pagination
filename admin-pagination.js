@@ -247,6 +247,9 @@ function createSearchPagination(options){
 		
 	}
 
+	searchInput.addEventListener("input", function(){
+		search();
+	});
 
 	return {
 		render,
